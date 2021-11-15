@@ -5,7 +5,7 @@ import com.google.gson.GsonBuilder
 import com.repository.Application
 import com.repository.BuildConfig
 import com.repository.R
-import com.repository.repository.ApiClient
+import com.repository.api.ApiClient
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient

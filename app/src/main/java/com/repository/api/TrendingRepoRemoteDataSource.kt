@@ -1,4 +1,4 @@
-package com.repository.repository
+package com.repository.api
 
 import com.repository.extension.debugLog
 import com.repository.models.TrendingRepo

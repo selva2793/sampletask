@@ -1,4 +1,4 @@
-package com.repository.repository
+package com.repository.api
 
 import com.repository.models.TrendingRepo
 import retrofit2.Response

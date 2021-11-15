@@ -1,9 +1,9 @@
 package com.repository.di.modules
 
 import com.repository.localdatabase.TrendingDao
-import com.repository.repository.ApiClient
-import com.repository.repository.TrendingRepoLocalDataSource
-import com.repository.repository.TrendingRepoRemoteDataSource
+import com.repository.api.ApiClient
+import com.repository.api.TrendingRepoLocalDataSource
+import com.repository.api.TrendingRepoRemoteDataSource
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

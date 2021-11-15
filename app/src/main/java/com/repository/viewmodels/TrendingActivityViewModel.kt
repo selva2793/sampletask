@@ -6,8 +6,8 @@ import androidx.lifecycle.viewModelScope
 import com.repository.Utils
 import com.repository.models.TrendingRepo
 import com.repository.models.TrendingResponse
-import com.repository.repository.TrendingRepoLocalDataSource
-import com.repository.repository.TrendingRepoRemoteDataSource
+import com.repository.api.TrendingRepoLocalDataSource
+import com.repository.api.TrendingRepoRemoteDataSource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

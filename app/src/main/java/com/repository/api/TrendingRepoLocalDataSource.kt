@@ -1,4 +1,4 @@
-package com.repository.repository
+package com.repository.api
 
 import com.repository.localdatabase.TrendingDao
 import com.repository.models.TrendingRepo
