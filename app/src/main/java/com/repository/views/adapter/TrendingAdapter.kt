@@ -13,6 +13,7 @@ import com.repository.databinding.ItemTrendingRepoBinding
 import com.repository.extension.bindDrawableStart
 import com.repository.extension.containsIgnoreCase
 import com.repository.models.TrendingRepo
+import java.lang.Exception
 
 class TrendingAdapter constructor(val utils: Utils, var list: ArrayList<TrendingRepo>) :
     BaseSearchAdapter<TrendingRepo, TrendingAdapter.TrendingViewHolder>(list) {
@@ -41,18 +42,21 @@ class TrendingAdapter constructor(val utils: Utils, var list: ArrayList<Trending
         RecyclerView.ViewHolder(binding.root) {
 
         fun bindView(trendingRepo: TrendingRepo) {
-            binding.repoName.text = trendingRepo.name
-            binding.repoAuthor.text = trendingRepo.author
-            binding.repoDesc.text = trendingRepo.description
-            binding.repoLanguage.text = trendingRepo.language
-            binding.repoStarsCount.text = trendingRepo.stars.toString()
-            GlideAppImpl.loadImage(
-                binding.root.context,
-                trendingRepo.avatar,
-                binding.repoIcon,
-                drawable(trendingRepo.languageColor)
-            )
-            binding.repoLanguage.bindDrawableStart(drawable(trendingRepo.languageColor))
+            binding.repoName.text = if(trendingRepo.name != null && trendingRepo.name.isNotEmpty()) trendingRepo.name else binding.root.context.resources.getString(R.string.empty_text)
+            binding.repoAuthor.text = if(trendingRepo.author != null && trendingRepo.author.isNotEmpty()) trendingRepo.author else binding.root.context.resources.getString(R.string.empty_text)
+            binding.repoDesc.text = if(trendingRepo.description != null && trendingRepo.description.isNotEmpty()) trendingRepo.description else binding.root.context.resources.getString(R.string.empty_text)
+            binding.repoLanguage.text = if(trendingRepo.language != null && trendingRepo.language.isNotEmpty()) trendingRepo.language else binding.root.context.resources.getString(R.string.empty_text)
+            binding.repoStarsCount.text = if(trendingRepo.stars != null) trendingRepo.stars.toString() else binding.root.context.resources.getString(R.string.zero_text)
+            try {
+                GlideAppImpl.loadImage(
+                        binding.root.context,
+                        trendingRepo.avatar,
+                        binding.repoIcon,
+                        drawable(trendingRepo.languageColor)
+                )
+                binding.repoLanguage.bindDrawableStart(drawable(trendingRepo.languageColor))
+            } catch (e: Exception) {
+            }
         }
 
         private fun getColor(colorCode: String): Int {

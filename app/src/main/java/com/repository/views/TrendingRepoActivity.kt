@@ -111,23 +111,23 @@ class TrendingRepoActivity : BaseActivity<TrendingActivityViewModel>() {
         if(it){
             Snackbar.make(
                 swipe_layout,
-                "Internet Connected.",
+                    resources.getString(R.string.internet_connected),
                 Snackbar.LENGTH_LONG
             ).setAction(
-                "Undo",
-                {
-                    swipe_layout.setBackgroundColor(Color.parseColor("#f2f2f2"))
-                }).show()
+                    resources.getString(R.string.undo_text)
+            ) {
+                swipe_layout.setBackgroundColor(resources.getColor(R.color.card_white))
+            }.show()
         }else {
             Snackbar.make(
                 swipe_layout,
-                "No network connection.",
+                    resources.getString(R.string.internet_not_connected),
                 Snackbar.LENGTH_LONG
             ).setAction(
-                "Undo",
-                {
-                    swipe_layout.setBackgroundColor(Color.parseColor("#f2f2f2"))
-                }).show()
+                    resources.getString(R.string.undo_text)
+            ) {
+                swipe_layout.setBackgroundColor(resources.getColor(R.color.card_white))
+            }.show()
         }
     }
 

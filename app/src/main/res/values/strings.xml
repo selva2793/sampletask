@@ -6,4 +6,10 @@
     <string name="database_name">TrendingRepoDataBase</string>
     <string name="text_try_again">Try Again</string>
     <string name="no_network_connection">No network connection</string>
+    <string name="empty_text">.....</string>
+    <string name="check_internet">Please check your Internet Connection and Try Again</string>
+    <string name="internet_connected">Internet Connected.</string>
+    <string name="internet_not_connected">No network connection.</string>
+    <string name="undo_text">Undo</string>
+    <string name="zero_text">0</string>
 </resources>
